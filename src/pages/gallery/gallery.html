@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Gallery</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let picture of picturesDatabase | async">
+    <img [src]="picture.url"/>
+    <ion-card-content>
+      <button ion-button color="danger" full (click)="removePicture(picture.file, picture.$key)">Remove Picture</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

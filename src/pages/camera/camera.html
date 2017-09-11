@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Camera</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- No picture taken -->
+  <div *ngIf="!picture">
+    <p ion-text>No Picture taken.</p>
+    <button ion-button full (click)="takePicture()">Take Picture</button>
+  </div>
+  <!-- Picture taken -->
+  <div *ngIf="picture">
+    <img [src]="picture">
+    <button ion-button full (click)="addPictureToStorage()">Send to Storage</button>
+    <button ion-button full color="danger" (click)="cancel()">Cancel</button>
+  </div>
+</ion-content>
